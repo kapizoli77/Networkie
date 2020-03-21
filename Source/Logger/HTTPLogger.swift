@@ -27,7 +27,7 @@ public final class HTTPLogger {
         }
         logString += "\n\n*************************\n\n"
 
-        debugPrint(logString)
+        print(logString)
     }
 
     public class func logRequest(_ request: URLRequest) {
@@ -65,7 +65,7 @@ public final class HTTPLogger {
         }
 
         logString += "\n\n*************************\n\n"
-        debugPrint(logString)
+        print(logString)
     }
 
     public class func logResponse(_ response: URLResponse?, data: Data? = nil) {
@@ -102,7 +102,7 @@ public final class HTTPLogger {
         }
 
         logString += "\n\n*************************\n\n"
-        debugPrint(logString)
+        print(logString)
     }
 
     public class func logHeaders(_ headers: [String: AnyObject]) -> String {

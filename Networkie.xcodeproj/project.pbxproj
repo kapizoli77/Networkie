@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F5FA9032425F80E009F5B1E /* SynchronizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5FA9022425F80E009F5B1E /* SynchronizedSet.swift */; };
 		5FDDD137242390AF00051623 /* Networkie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FDDD12D242390AE00051623 /* Networkie.framework */; };
 		5FDDD13C242390AF00051623 /* NetworkieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDDD13B242390AF00051623 /* NetworkieTests.swift */; };
 		5FDDD13E242390AF00051623 /* Networkie.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FDDD130242390AE00051623 /* Networkie.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F5FA9022425F80E009F5B1E /* SynchronizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizedSet.swift; sourceTree = "<group>"; };
 		5FDDD12D242390AE00051623 /* Networkie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networkie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FDDD130242390AE00051623 /* Networkie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networkie.h; sourceTree = "<group>"; };
 		5FDDD131242390AE00051623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F5FA9012425F7F4009F5B1E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5F5FA9022425F80E009F5B1E /* SynchronizedSet.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		5FDDD123242390AE00051623 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +141,7 @@
 		5FDDD12F242390AE00051623 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				5F5FA9012425F7F4009F5B1E /* Utils */,
 				5FDDD1AB2423A55700051623 /* Logger */,
 				5FDDD1722423920300051623 /* BackendService */,
 				5FDDD1672423920300051623 /* Interceptors */,
@@ -345,6 +356,7 @@
 				5FDDD19C2423920300051623 /* DataRequest.swift in Sources */,
 				5FDDD18A2423920300051623 /* InterceptorEntities.swift in Sources */,
 				5FDDD18C2423920300051623 /* NetworkQueryGeneretor.swift in Sources */,
+				5F5FA9032425F80E009F5B1E /* SynchronizedSet.swift in Sources */,
 				5FDDD19E2423920300051623 /* NetworkOperation.swift in Sources */,
 				5FDDD1962423920300051623 /* RequestGroup.swift in Sources */,
 				5FDDD19D2423920300051623 /* RequestDelegate.swift in Sources */,
@@ -517,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -528,7 +541,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kapizoli77.networkie;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -542,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -553,7 +567,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kapizoli77.networkie;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

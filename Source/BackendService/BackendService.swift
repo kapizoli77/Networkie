@@ -13,7 +13,7 @@ open class BackendService {
     public let networkService: NetworkServiceProtocol
     public let networkQueue = OperationQueue()
     public let resultQueue = OperationQueue.main
-    public var activeRequests = Set<Request>()
+    public var activeRequests = SynchronizedSet<Request>()
 
     private let requestLoggerInterceptor = RequestLoggerInterceptor()
     private let dataTaskResponseLoggerInterceptor = DataTaskResponseLoggerInterceptor()
