@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Networkie"
-  spec.version      = "0.1.0"
+  spec.version      = "0.2.0"
   spec.summary      = "Swift network library"
 
   # This description is used to generate tags and improve search results.
