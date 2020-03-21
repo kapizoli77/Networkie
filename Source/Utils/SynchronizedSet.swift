@@ -5,7 +5,9 @@
 
 import Foundation
 
-public struct SynchronizedSet<Element> where Element : Hashable {
+/// It has to be a class, otherwise it can cause Swift Access Races
+/// https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer/swift_access_races
+public class SynchronizedSet<Element> where Element : Hashable {
     private let queue: DispatchQueue
     private var set: Set<Element>
 
@@ -19,14 +21,14 @@ public struct SynchronizedSet<Element> where Element : Hashable {
     }
 
     @discardableResult
-    public mutating func remove(_ member: Element) -> Element? {
+    public func remove(_ member: Element) -> Element? {
         var result: Element?
         queue.sync { result = set.remove(member) }
         return result
     }
 
     @discardableResult
-    public mutating func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
+    public func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
         var result: (inserted: Bool, memberAfterInsert: Element)?
         queue.sync { result = set.insert(newMember) }
         return result ?? (inserted: false, memberAfterInsert: newMember)
