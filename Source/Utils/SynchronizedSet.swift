@@ -18,12 +18,14 @@ public struct SynchronizedSet<Element> where Element : Hashable {
         self.set = set
     }
 
+    @discardableResult
     public mutating func remove(_ member: Element) -> Element? {
         var result: Element?
         queue.sync { result = set.remove(member) }
         return result
     }
 
+    @discardableResult
     public mutating func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
         var result: (inserted: Bool, memberAfterInsert: Element)?
         queue.sync { result = set.insert(newMember) }
@@ -36,6 +38,7 @@ public struct SynchronizedSet<Element> where Element : Hashable {
         return result ?? false
     }
 
+    @discardableResult
     public func first(where predicate: (Element) throws -> Bool) rethrows -> Element? {
         var result: Element?
         queue.sync {
