@@ -7,9 +7,19 @@ import Foundation
 
 /// It has to be a class, otherwise it can cause Swift Access Races
 /// https://developer.apple.com/documentation/code_diagnostics/thread_sanitizer/swift_access_races
-public class SynchronizedSet<Element> where Element : Hashable {
+public class SynchronizedSet<Element> where Element: Hashable {
+    // MARK: - Properties
+
     private let queue: DispatchQueue
     private var set: Set<Element>
+
+    public var count: Int {
+        var result: Int?
+        queue.sync { result = set.count }
+        return result ?? 0
+    }
+
+    // MARK: - Initialization
 
     /// Constructor
     /// - Parameters:
@@ -19,6 +29,8 @@ public class SynchronizedSet<Element> where Element : Hashable {
         self.queue = queue
         self.set = set
     }
+
+    // MARK: - Functions
 
     @discardableResult
     public func remove(_ member: Element) -> Element? {
@@ -47,5 +59,15 @@ public class SynchronizedSet<Element> where Element : Hashable {
             result = try? set.first(where: predicate)
         }
         return result
+    }
+
+    public func forEach(_ body: (Element) throws -> Void) rethrows {
+        queue.sync {
+            try? set.forEach(body)
+        }
+    }
+
+    public func removeAll(keepingCapacity keepCapacity: Bool = false) {
+        set.removeAll(keepingCapacity: keepCapacity)
     }
 }
