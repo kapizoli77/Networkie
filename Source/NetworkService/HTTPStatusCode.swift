@@ -5,6 +5,8 @@
 // Copyright (c) 2017 Richard Hodgkins. All rights reserved.
 //
 
+import Foundation
+
 /// HTTP status codes as per the [IANA HTTP status code registry](http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml).
 ///
 /// Last updated: Mon, 30 Oct 2017 22:08:15 GMT
