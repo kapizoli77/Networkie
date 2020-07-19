@@ -5,10 +5,10 @@
 
 import Foundation
 
-struct NetworkQueryGeneretor {
+public struct NetworkQueryGeneretor {
     // MARK: - Functions
 
-    static func makeRequest(for url: URL, params: Any?, timeOutInterval: Double) -> URLRequest {
+    public static func makeRequest(for url: URL, params: Any?, timeOutInterval: Double) -> URLRequest {
         var mutableRequest = URLRequest(url: url,
                                         cachePolicy: .useProtocolCachePolicy,
                                         timeoutInterval: timeOutInterval)
@@ -23,7 +23,7 @@ struct NetworkQueryGeneretor {
     ///
     /// - Parameter params: The list of `Parameters`
     /// - Returns: The string that represents an URL query
-    static func makeQueryItems(params: RequestParameters?) -> [URLQueryItem]? {
+    public static func makeQueryItems(params: RequestParameters?) -> [URLQueryItem]? {
         guard let params = params else {
             return nil
         }
